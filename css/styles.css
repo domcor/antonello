@@ -1507,19 +1507,29 @@ h2 {
   }
 
   .story {
-    min-height: 120vh;
+    min-height: auto;
+    height: auto;
+    padding: 4rem 0;
   }
 
-  .story__card {
-    padding: 1.5rem 1rem;
+  .story__content {
+    height: auto;
+    min-height: 100vh;
+    position: relative;
+    padding: 2rem 1.5rem;
+  }
+
+  .story__background,
+  .story__overlay,
+  .story__vignette {
+    height: 100%;
+    position: absolute;
+    inset: 0;
   }
 
   .story__bottom {
+    position: relative;
     padding: 2rem 0 1.25rem;
-  }
-
-  .story__bottom-card {
-    padding: 1.1rem 1rem;
   }
 
   .section-route {
@@ -1529,6 +1539,8 @@ h2 {
 
   .golden-hour {
     padding: 1.5rem 1rem;
+    min-height: auto;
+    height: auto;
   }
 
   .golden-hour__panel {
@@ -1562,6 +1574,8 @@ h2 {
 
   .booking {
     padding: 3rem 1rem;
+    min-height: auto;
+    height: auto;
   }
 
   .booking__features {
