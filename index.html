@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cinquecento - Amalfi Coast Photo Experience</title>
+  <meta name="description" content="Luxury photo experience on the Amalfi Coast" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- GSAP for animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <!-- Lenis for smooth scroll -->
+  <script src="https://cdn.jsdelivr.net/gh/darkroomengineering/lenis@latest/bundled/lenis.js"></script>
+</head>
+<body>
+  <!-- HERO SECTION -->
+  <section id="hero" class="hero">
+    <video autoplay muted loop playsinline class="hero__video" preload="auto">
+      <source src="public/hero.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Premium gradient overlay -->
+    <div class="hero__overlay"></div>
+    <div class="hero__vignette"></div>
+
+    <!-- Animated background elements -->
+    <div class="hero__decoration hero__decoration--1"></div>
+    <div class="hero__decoration hero__decoration--2"></div>
+
+    <!-- Main content -->
+    <div class="hero__content">
+      <div class="hero__accent hero__accent--top"></div>
+
+      <h1 class="hero__title">
+        <span class="hero__title-gradient">CINQUECENTO</span>
+      </h1>
+
+      <p class="hero__subtitle">Amalfi Coast Photo Experience</p>
+
+      <div class="hero__accent hero__accent--bottom"></div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="hero__scroll">
+      <span>Scorri</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- STORY SECTION -->
+  <section id="story" class="story">
+    <img src="public/g1.jpg" alt="Story background" class="story__background" />
+    <div class="story__overlay"></div>
+    <div class="story__vignette"></div>
+
+    <div class="story__content">
+      <div class="story__accent story__accent--top"></div>
+
+      <div class="story__card">
+        <span class="story__eyebrow">Exclusive road experience</span>
+        <h2 class="story__title">
+          Drive the <span class="story__highlight">dream</span>
+        </h2>
+
+        <p class="story__text">
+          Un percorso su misura lungo la Costiera Amalfitana, creato per chi cerca curve perfette, soste segrete e un comfort senza compromessi.
+        </p>
+
+        <div class="story__info-grid">
+          <div class="story__info-item">
+            <strong>Tratti iconici</strong>
+            <span>Strade panoramiche con viste che restano nella memoria.</span>
+          </div>
+          <div class="story__info-item">
+            <strong>Servizio premium</strong>
+            <span>Assistenza concierge, ristoranti riservati e dettagli d’autore.</span>
+          </div>
+          <div class="story__info-item">
+            <strong>Momenti su misura</strong>
+            <span>Soste curate, esperienze private e un itinerario fluido.</span>
+          </div>
+        </div>
+
+        <p class="story__subtext">
+          Tutto quello che serve per trasformare un viaggio in un’esperienza indimenticabile.
+        </p>
+      </div>
+
+      <div class="story__accent story__accent--bottom"></div>
+    </div>
+
+    <div class="story__bottom">
+      <div class="story__bottom-card">
+        <p>La Costiera non è solo una destinazione: è una sequenza di viste, curve e attimi fotografici pensati per chi sa riconoscere il vero lusso.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-route">
+    <div class="section-route__line"></div>
+    <div class="section-route__marker"></div>
+    <div class="section-route__line"></div>
+  </div>
+
+  <!-- GOLDEN HOUR SECTION -->
+  <section id="golden-hour" class="golden-hour">
+    <div class="golden-hour__background"></div>
+
+    <div class="golden-hour__content">
+      <div class="golden-hour__accent golden-hour__accent--top"></div>
+
+      <h2 class="golden-hour__title">
+        Golden Hour is <span class="golden-hour__highlight">everything</span>
+      </h2>
+
+      <p class="golden-hour__text">
+        The light, the sea, the silence — everything aligns to create timeless moments.
+      </p>
+
+      <div class="golden-hour__panel">
+        <div class="golden-hour__panel-copy">
+          <p class="golden-hour__panel-title">Un crepuscolo esclusivo, catturato in ogni dettaglio.</p>
+          <p class="golden-hour__panel-text">Ogni fermata è studiata per offrire prospettive rare, con un servizio curato e un comfort che lascia il segno.</p>
+        </div>
+
+        <div class="golden-hour__features">
+          <div class="golden-hour__feature-item">
+            <span class="golden-hour__feature-label">Soste riservate</span>
+            <span class="golden-hour__feature-desc">Luoghi nascosti dove la luce crea foto iconiche.</span>
+          </div>
+          <div class="golden-hour__feature-item">
+            <span class="golden-hour__feature-label">Scatto couture</span>
+            <span class="golden-hour__feature-desc">Dettagli raffinati e atmosfere dorate dedicate a ogni immagine.</span>
+          </div>
+          <div class="golden-hour__feature-item">
+            <span class="golden-hour__feature-label">Tramonto privato</span>
+            <span class="golden-hour__feature-desc">Esperienze in esclusiva per godersi l’ora d’oro lontano dalla folla.</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="golden-hour__subtext">
+        Where light meets memory
+      </p>
+
+      <div class="golden-hour__mood">
+        <p class="golden-hour__mood-quote">“L’ora dorata è la cornice perfetta per un’emozione che resta.”</p>
+        <p class="golden-hour__mood-author">— Esperienza Cinquecento</p>
+      </div>
+
+      <div class="golden-hour__accent golden-hour__accent--bottom"></div>
+    </div>
+  </section>
+
+  <div class="section-route">
+    <div class="section-route__line"></div>
+    <div class="section-route__marker"></div>
+    <div class="section-route__line"></div>
+  </div>
+
+  <!-- GALLERY CAROUSEL SECTION -->
+  <section id="gallery" class="gallery-carousel">
+    <div class="gallery-carousel__header">
+      <div class="gallery-carousel__divider gallery-carousel__divider--top"></div>
+      <h2 class="gallery-carousel__title">Visual Stories</h2>
+      <p class="gallery-carousel__subtitle">A moment in time, captured forever</p>
+    </div>
+
+    <div class="gallery-carousel__wrapper">
+      <div class="gallery-carousel__container">
+        <!-- Slide 1 -->
+        <div class="gallery-carousel__slide" data-index="0">
+          <img src="public/g1.jpg" alt="Amalfi Coast 1" class="gallery-carousel__image" />
+          <div class="gallery-carousel__quote-wrapper">
+            <p class="gallery-carousel__quote">
+              "La Costiera Amalfitana non è solo un paesaggio, è un'emozione"
+            </p>
+            <p class="gallery-carousel__author">— Amalfi, la perla della costa</p>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="gallery-carousel__slide" data-index="1">
+          <img src="public/g2.jpg" alt="Amalfi Coast 2" class="gallery-carousel__image" />
+          <div class="gallery-carousel__quote-wrapper">
+            <p class="gallery-carousel__quote">
+              "Dove il mare bacia le montagne, nasce la magia"
+            </p>
+            <p class="gallery-carousel__author">— Positano, il sogno verticalale</p>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="gallery-carousel__slide" data-index="2">
+          <img src="public/g3.jpg" alt="Amalfi Coast 3" class="gallery-carousel__image" />
+          <div class="gallery-carousel__quote-wrapper">
+            <p class="gallery-carousel__quote">
+              "In ogni tramonto della Costiera c'è un'opera d'arte della natura"
+            </p>
+            <p class="gallery-carousel__author">— Ravello, tra cielo e terra</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation dots -->
+      <div class="gallery-carousel__dots">
+        <button class="gallery-carousel__dot active" data-slide="0"></button>
+        <button class="gallery-carousel__dot" data-slide="1"></button>
+        <button class="gallery-carousel__dot" data-slide="2"></button>
+      </div>
+    </div>
+
+    <div class="gallery-carousel__footer">
+      <p class="gallery-carousel__footer-text">Scorrere per scoprire • Swipe to explore</p>
+    </div>
+  </section>
+
+  <div class="section-route section-route--light">
+    <div class="section-route__line"></div>
+    <div class="section-route__marker"></div>
+    <div class="section-route__line"></div>
+  </div>
+
+  <!-- BOOKING SECTION -->
+  <section id="booking" class="booking">
+    <div class="booking__background"></div>
+    <div class="booking__decorations">
+      <div class="booking__decoration booking__decoration--1"></div>
+      <div class="booking__decoration booking__decoration--2"></div>
+    </div>
+
+    <!-- Hero text -->
+    <div class="booking__hero">
+      <div class="booking__accent booking__accent--top"></div>
+      <h2 class="booking__title">Il tuo momento perfetto ti aspetta</h2>
+      <p class="booking__subtitle">Vivi l'esperienza Cinquecento sulla Costiera Amalfitana</p>
+      <div class="booking__accent booking__accent--bottom"></div>
+    </div>
+
+    <!-- Features grid -->
+    <div class="booking__features">
+      <div class="booking__feature">
+        <div class="booking__feature-icon">📸</div>
+        <h3 class="booking__feature-title">Fotografia Premium</h3>
+        <p class="booking__feature-text">Scatti professionali con cornice dorata</p>
+      </div>
+      <div class="booking__feature">
+        <div class="booking__feature-icon">🚗</div>
+        <h3 class="booking__feature-title">Vettura Esclusiva</h3>
+        <p class="booking__feature-text">Cinquecento storica restaurata</p>
+      </div>
+      <div class="booking__feature">
+        <div class="booking__feature-icon">🌅</div>
+        <h3 class="booking__feature-title">Golden Hour</h3>
+        <p class="booking__feature-text">Sessione al tramonto dalla Costiera</p>
+      </div>
+      <div class="booking__feature">
+        <div class="booking__feature-icon">💎</div>
+        <h3 class="booking__feature-title">Esperienza VIP</h3>
+        <p class="booking__feature-text">Servizio personalizzato esclusivo</p>
+      </div>
+    </div>
+
+    <!-- CTA Button -->
+    <div class="booking__cta">
+      <button class="booking__button">Prenota Ora</button>
+      <p class="booking__button-text">Posti limitati • Disponibilità immediata</p>
+    </div>
+
+    <!-- Footer -->
+    <div class="booking__footer">
+      <p class="booking__footer-text">© 2026 Cinquecento • Premium Amalfi Coast Experiences</p>
+      <p class="booking__contact">
+        <span style="color: var(--accent-gold);">info@cinquecento.it</span> • 
+        <span style="color: var(--accent-gold);">+39 089 XXXXX</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="js/lenis-setup.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/gallery-carousel.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
