@@ -22,20 +22,7 @@ if (heroVideo) {
 }
 
 // ===== BOOKING BUTTON =====
-const bookingButton = document.querySelector('.booking__button');
-if (bookingButton) {
-  bookingButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    // Ripple effect on click
-    gsap.to(bookingButton, {
-      scale: 1,
-      duration: 0.5,
-      ease: 'elastic.out(1, 0.3)',
-    });
-    console.log('Book Experience clicked');
-    // Add your booking logic here (modal, redirect, etc.)
-  });
-}
+// Moved to animations.js to avoid duplicate declarations
 
 // ===== VIDEO ERROR HANDLING =====
 const videos = document.querySelectorAll('video');
@@ -73,41 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ===== PERFORMANCE: Refresh ScrollTrigger on resize =====
-let resizeTimer;
-window.addEventListener('resize', () => {
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(() => {
-    ScrollTrigger.refresh();
-  }, 250);
-});
-
-// ===== MOBILE NAVIGATION MENU =====
-const mobileToggle = document.querySelector('.nav__mobile-toggle');
-const mobileMenu = document.querySelector('.nav__menu--mobile');
-
-if (mobileToggle && mobileMenu) {
-  mobileToggle.addEventListener('click', () => {
-    mobileToggle.classList.toggle('active');
-    mobileMenu.classList.toggle('active');
-  });
-
-  // Close mobile menu when clicking a link
-  const mobileLinks = mobileMenu.querySelectorAll('.nav__link');
-  mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      mobileToggle.classList.remove('active');
-      mobileMenu.classList.remove('active');
-    });
-  });
-
-  // Close mobile menu when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!mobileToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
-      mobileToggle.classList.remove('active');
-      mobileMenu.classList.remove('active');
-    }
-  });
-}
+// Moved to animations.js to avoid duplicate declarations
 
 // ===== SMOOTH SCROLLING FOR NAVIGATION LINKS =====
 let isProgrammaticScroll = false;
@@ -180,6 +133,60 @@ window.addEventListener('scroll', updateActiveNavLink);
 // Update on page load
 document.addEventListener('DOMContentLoaded', () => {
   console.log('Cinquecento Premium Site Loaded');
+
+  // ===== MOBILE NAVIGATION MENU =====
+  const mobileToggle = document.querySelector('.nav__mobile-toggle');
+  const mobileMenu = document.querySelector('.nav__menu--mobile');
+
+  console.log('Mobile toggle element:', mobileToggle);
+  console.log('Mobile menu element:', mobileMenu);
+
+  if (mobileToggle && mobileMenu) {
+    console.log('Both elements found, adding event listeners');
+    
+    mobileToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log('Mobile toggle CLICK event fired');
+      console.log('Menu currently active:', mobileMenu.classList.contains('active'));
+      mobileMenu.classList.toggle('active');
+      mobileToggle.classList.toggle('active');
+      console.log('Menu now active:', mobileMenu.classList.contains('active'));
+    });
+
+    mobileToggle.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log('Mobile toggle TOUCH event fired');
+      mobileMenu.classList.toggle('active');
+      mobileToggle.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking a link
+    const mobileLinks = mobileMenu.querySelectorAll('.nav__link');
+    console.log('Found mobile links:', mobileLinks.length);
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log('Mobile link clicked, closing menu');
+        mobileToggle.classList.remove('active');
+        mobileMenu.classList.remove('active');
+      });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!mobileToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+        console.log('Clicked outside, closing menu');
+        mobileToggle.classList.remove('active');
+        mobileMenu.classList.remove('active');
+      }
+    });
+  } else {
+    console.error('Mobile menu elements not found!');
+    console.log('Available elements with nav__mobile-toggle class:', document.querySelectorAll('.nav__mobile-toggle'));
+    console.log('Available elements with nav__menu--mobile class:', document.querySelectorAll('.nav__menu--mobile'));
+  }
   
   // Initial active link update
   updateActiveNavLink();
