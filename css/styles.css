@@ -1509,12 +1509,12 @@ h2 {
   .story {
     min-height: auto;
     height: auto;
-    padding: 4rem 0;
+    padding: 2rem 0;
   }
 
   .story__content {
     height: auto;
-    min-height: 100vh;
+    min-height: auto;
     position: relative;
     padding: 2rem 1.5rem;
   }

@@ -1,5 +1,8 @@
 // Scroll-triggered animations with GSAP ScrollTrigger - PREMIUM VERSION
 
+// Detect mobile devices
+const isMobile = window.innerWidth < 768 || 'ontouchstart' in window;
+
 // ===== HERO ANIMATIONS =====
 // Subtle parallax on hero elements during page load
 gsap.to('.hero__decoration--1', {
@@ -21,31 +24,33 @@ gsap.to('.hero__decoration--2', {
 gsap.utils.toArray('.story__content').forEach((element) => {
   ScrollTrigger.create({
     trigger: element,
-    start: 'top 60%',
+    start: 'top 70%', // Moved down for mobile
     onEnter: () => {
       element.classList.add('visible');
     },
   });
 });
 
-// Parallax background effect on story
-gsap.to('.story__background', {
-  scrollTrigger: {
-    trigger: '.story',
-    start: 'top top',
-    end: 'bottom top',
-    scrub: 1.2,
-    markers: false,
-  },
-  y: 120,
-  duration: 1,
-});
+// Parallax background effect on story - DISABLED ON MOBILE
+if (!isMobile) {
+  gsap.to('.story__background', {
+    scrollTrigger: {
+      trigger: '.story',
+      start: 'top top',
+      end: 'bottom top',
+      scrub: 1.2,
+      markers: false,
+    },
+    y: 120,
+    duration: 1,
+  });
+}
 
 // ===== GOLDEN HOUR ANIMATIONS =====
 gsap.utils.toArray('.golden-hour').forEach((element) => {
   ScrollTrigger.create({
     trigger: element,
-    start: 'top 65%',
+    start: 'top 75%', // Moved down for mobile
     onEnter: () => {
       element.classList.add('visible');
     },
@@ -57,11 +62,11 @@ gsap.utils.toArray('.golden-hour').forEach((element) => {
 gsap.from('.gallery-carousel__header', {
   scrollTrigger: {
     trigger: '.gallery-carousel',
-    start: 'top 70%',
+    start: 'top 80%', // Moved down for mobile
   },
-  duration: 0.8,
+  duration: 0.6, // Faster on mobile
   opacity: 0,
-  y: 30,
+  y: 20, // Less movement on mobile
   ease: 'power2.out',
 });
 
@@ -70,11 +75,11 @@ gsap.from('.gallery-carousel__header', {
 gsap.from('.booking__hero', {
   scrollTrigger: {
     trigger: '.booking',
-    start: 'top 70%',
+    start: 'top 80%', // Moved down for mobile
   },
-  duration: 0.8,
+  duration: 0.6, // Faster on mobile
   opacity: 0,
-  y: 40,
+  y: 20, // Less movement on mobile
   ease: 'power2.out',
 });
 
